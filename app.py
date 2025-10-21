@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import sklearn
 
 model = pickle.load(open('spam_model.pkl', 'rb'))
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
@@ -20,3 +21,4 @@ if st.button("Predict"):
             st.success("✅ The email is **Ham (Not Spam)**")
         else:
             st.error("🚨 The email is **Spam**")
+
